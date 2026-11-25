@@ -80,9 +80,9 @@ def load_settings() -> Settings:
     enable_failure_simulation = (
         os.getenv("ENABLE_FAILURE_SIMULATION", "false").strip().lower() == "true"
     )
-    llm_model = os.getenv("LLM_MODEL", "gemini/gemini-2.0-flash").strip()
+    llm_model = os.getenv("LLM_MODEL", "gemini/gemini-3.5-flash-lite").strip()
     if not llm_model:
-        llm_model = "gemini/gemini-2.0-flash"
+        llm_model = "gemini/gemini-3.5-flash-lite"
 
     default_system_prompt = os.getenv(
         "DEFAULT_SYSTEM_PROMPT", "You are a helpful, concise assistant."

@@ -24,7 +24,7 @@ RUN mkdir -p /data && chown appuser /data
 USER appuser
 
 ENV DATABASE_URL=sqlite:////data/app.db \
-    LLM_MODEL=gemini/gemini-2.0-flash \
+    LLM_MODEL=gemini/gemini-3.5-flash-lite \
     DEFAULT_SYSTEM_PROMPT="You are a helpful, concise assistant." \
     LITELLM_LOCAL_MODEL_COST_MAP=True \
     PYTHONUNBUFFERED=1

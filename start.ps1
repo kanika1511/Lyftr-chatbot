@@ -30,7 +30,7 @@ if (-not $env:LLM_API_KEYS) {
 $env:DATABASE_URL              = "sqlite:///./data/app.db"
 $env:ALLOWED_ORIGINS           = "http://localhost:3000"
 $env:ENABLE_FAILURE_SIMULATION = "true"
-$env:LLM_MODEL                 = "gemini/gemini-2.0-flash"
+$env:LLM_MODEL                 = "gemini/gemini-3.5-flash-lite"
 $env:LITELLM_LOCAL_MODEL_COST_MAP = "True"
 $env:VITE_API_BASE_URL         = "http://localhost:8000"
 
@@ -46,7 +46,7 @@ $beArgs = "-NoExit -Command `"" +
     "`$env:DATABASE_URL='sqlite:///./data/app.db'; " +
     "`$env:ALLOWED_ORIGINS='http://localhost:3000'; " +
     "`$env:ENABLE_FAILURE_SIMULATION='true'; " +
-    "`$env:LLM_MODEL='gemini/gemini-2.0-flash'; " +
+    "`$env:LLM_MODEL='gemini/gemini-3.5-flash-lite'; " +
     "`$env:LITELLM_LOCAL_MODEL_COST_MAP='True'; " +
     "Write-Host 'Backend starting on http://localhost:8000' -ForegroundColor Cyan; " +
     ".\.venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload`""

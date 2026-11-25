@@ -45,6 +45,8 @@ def setup_cache(settings: Settings) -> None:
     litellm.cache = Cache(type="local")
     # Ensure network fetch of price map is suppressed (sandbox has no internet)
     litellm.suppress_debug_info = True
+    # Drop model-specific unsupported params (e.g. temperature on newer Gemini models)
+    litellm.drop_params = True
 
 
 def _is_retryable(exc: Exception) -> bool:
